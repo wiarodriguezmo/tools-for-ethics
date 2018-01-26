@@ -570,9 +570,11 @@ a.popup-video.video:after {
     transition: all 0.3s;
     border: none;
     background: none;
+    width: 300px;
+    height: auto;
 }
 
-.show>a {
+.show a {
     outline: 0;
     white-space: normal;
     border: solid 1px #8080806b;
@@ -581,16 +583,21 @@ a.popup-video.video:after {
     background-color: #ffffffe0;
 }
 
-.show>a:hover {
+.show a:hover {
     background: #ffffff;
     border-color: $color2;
 }
 
-.dropdown-menu {
-    width: 300px;
-}
 .slick-list.draggable {
     margin-top: 40px;
+}
+
+.dropdown-menu .mCSB_inside > .mCSB_container {
+    margin-right: 10px;
+}
+
+.boxSubmodule {
+    padding: 5px;
 }
 
 @media (max-width: 767px) {
@@ -655,8 +662,13 @@ a.popup-video.video:after {
             }
         }
         .card-body {
+            padding: 0;
             .card-content {
                 padding: 0;
+                margin: 0;
+                >div {
+                    padding: 0;
+                }
             }
         }
     }

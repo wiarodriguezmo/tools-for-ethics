@@ -148,7 +148,8 @@ $(document).ready(function () {
             $.each(response.raw.table.rows, function (k, v) {
                 plantilla7Array.push(v.c);
             });
-            dataArray.push(plantilla7Array[0]);
+            if(plantilla7Array.length > 0)
+                dataArray.push(plantilla7Array[0]);
             countCalls++;
             finishedAsync();
         }
@@ -407,9 +408,8 @@ $(document).ready(function () {
             var titulo = check(array[i][0]);
             var descripcion = check(array[i][1]);
             var metodologia = putIcon(array[i][2].v);
-            var colNumber = parseInt(12 / (array.length - 1));
             $('.template-submodulos .card-content').append(
-                '<div class="col-12 col-md-' + colNumber + '">' +
+                '<div class="boxSubmodule col-12 col-md-3">' +
                 '<div class="submodule d-flex flex-column justify-content-between">' +
                 '<div class="title"><h5>' + titulo + '</h5></div>' +
                 '<div class="description">' + converter.makeHtml(descripcion) + '</div>' +
@@ -474,7 +474,8 @@ $(document).ready(function () {
         if (variable === "") {
             return "";
         } else {
-            return '<div class="col-md-4"><div class="video-label d-flex align-items-center"><i class="fa fa-play-circle-o" aria-hidden="true"></i><h4>Video ' + cantVideos + '</h4></div><a class="popup-video video" href="' + variable + '"><img src="https://img.youtube.com/vi/' + variable.substring(variable.indexOf("=") + 1, (variable.indexOf("&") === -1) ? variable.length : video1.indexOf("&")) + '/0.jpg"></a></div>';
+            let var2 = variable.substring(0, (variable.indexOf("&") === -1) ? variable.length : variable.indexOf("&"));
+            return '<div class="col-md-4"><div class="video-label d-flex align-items-center"><i class="fa fa-play-circle-o" aria-hidden="true"></i><h4>Video ' + cantVideos + '</h4></div><a class="popup-video video" href="' + var2 + '"><img src="https://img.youtube.com/vi/' + var2.substring(var2.indexOf("=") + 1, var2.length) + '/0.jpg"></a></div>';
         }
     }
 
@@ -549,7 +550,6 @@ $(document).ready(function () {
 
             //Recorre todo el array de datos, evaluando que tipo de templates ,
             //se usará para cada conjunto de datos
-            debugger
             $.each(dataArray, function (k, v) {
                 titulos.push(v[0].v);
                 switch (v[v.length - 1].v) {
@@ -572,7 +572,8 @@ $(document).ready(function () {
                         createTemplate6(v);
                         break;
                     case 7:
-                        createTemplate7(plantilla7Array);
+                        if(plantilla7Array.length > 0)
+                            createTemplate7(plantilla7Array);
                         break;
                     case 8:
                         createTemplate8(v);
@@ -613,25 +614,25 @@ $(document).ready(function () {
                 swipe: false
             });
 
-            var maxHeight = $("#mainTemplate .slick-active .card-content").height(); 
-            $('#mainTemplate').css({height: maxHeight + 320, overflow:'visible'});
+            var maxHeight = $("#mainTemplate .slick-active .card-content").height() + $("#mainTemplate .slick-active .card-header").height(); 
+            $('#mainTemplate').css({height: maxHeight + 200, overflow:'visible'});
             //Cuando se avanza en cada página, cambia el número actual y ajusta la propiedad Height
             $('#mainTemplate').on('afterChange', function (event, slick, currentSlide) {
                 $(".current_page").text(currentSlide + 1);
 
                  // Check the class "slick-active" for which has the highest height 
-                var maxHeight = $("#mainTemplate .slick-active .card-content").height(); 
-                console.log(maxHeight)
+                var maxHeight = $("#mainTemplate .slick-active .card-content").height() + $("#mainTemplate .slick-active .card-header").height(); 
                 // Apply the height to the slider conatiner to adapt the height
                 // .css overflow added to prevent hide arrows on change - it adds overflow hidden by default
-                $(this).css({height: maxHeight + 300, overflow:'visible'});
+                $(this).css({height: maxHeight + 200, overflow:'visible'});
+                $(".dropdown-menu").css({"max-height": maxHeight});
             });
 
             //Inicializa el scrollbar personalizado para cada contenedor de texto
             $(".text-scroll").mCustomScrollbar({
                 theme: "inset"
             });
-
+            
             //Cambia la estructura del scrbollbar personalizado
             $(".mCSB_container.mCS_no_scrollbar_y.mCS_y_hidden").parent().css({
                 'display': '-webkit-box',
@@ -703,6 +704,15 @@ $(document).ready(function () {
                 ${items}
                 </div>`);
 
+                
+            $(".dropdown-menu").css({"max-height": maxHeight});
+
+            //Inicializa el scrollbar del menú
+            $(".dropdown-menu").mCustomScrollbar({
+                theme: "inset"
+            });
+
+                
             //Va al slide al que se da clic
             $.each(titulos, (k, v) => {
                 $(`#item${k}`).click((e) => {
