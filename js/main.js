@@ -10,6 +10,7 @@ $(document).ready(function () {
     var metodologiasArray = [];
     var descripcionArray = [];
     var plantilla7Array = [];
+    var titulos = [];
 
     //Obtener datos de Google Docs Plantilla 1
     $('#mainTemplate').sheetrock({
@@ -147,8 +148,7 @@ $(document).ready(function () {
             $.each(response.raw.table.rows, function (k, v) {
                 plantilla7Array.push(v.c);
             });
-            if(plantilla7Array.length > 0)
-                dataArray.push(plantilla7Array[0]);
+            dataArray.push(plantilla7Array[0]);
             countCalls++;
             finishedAsync();
         }
@@ -177,7 +177,8 @@ $(document).ready(function () {
      */
     function createTemplate1(valor) {
         $("#mainTemplate").append('<div class="card template-1">' +
-            '<div class="card-header d-flex align-items-center d-flex align-items-center"><div class="module-icon"><img src="' + ModuleImg + '" /><div class="shape-icon"></div></div><span>' + converter.makeHtml(valor[0].v) + '</span><div class="border-header"></div></div>' +
+            '<div class="border-header"></div>' +
+            '<div class="card-header d-flex align-items-center d-flex align-items-center"><div class="module-icon"><img src="' + ModuleImg + '" /><div class="shape-icon"></div></div><span>' + converter.makeHtml(valor[0].v) + '</span></div>' +
             '<div class="card-body">' +
             '<div class="card-content row align-items-center">' +
             '<div class="col-12 col-md-6"><img src="' + valor[1].v + '"></div>' +
@@ -194,7 +195,8 @@ $(document).ready(function () {
      */
     function createTemplate2(valor) {
         $("#mainTemplate").append('<div class="card template-2">' +
-            '<div class="card-header d-flex align-items-center d-flex align-items-center"><div class="module-icon"><img src="' + ModuleImg + '" /><div class="shape-icon"></div></div><span>' + converter.makeHtml(valor[0].v) + '</span><div class="border-header"></div></div>' +
+            '<div class="border-header"></div>' +
+            '<div class="card-header d-flex align-items-center d-flex align-items-center"><div class="module-icon"><img src="' + ModuleImg + '" /><div class="shape-icon"></div></div><span>' + converter.makeHtml(valor[0].v) + '</span></div>' +
             '<div class="card-body">' +
             '<div class="card-content row align-items-center">' +
             '<div class="col-12 estrategia d-flex align-items-center">' + putIcon(valor[1].v) + '</div>' +
@@ -217,7 +219,8 @@ $(document).ready(function () {
             video5 = check(valor[6]),
             video6 = check(valor[7]);
         $("#mainTemplate").append('<div class="card template-3">' +
-            '<div class="card-header d-flex align-items-center d-flex align-items-center"><div class="module-icon"><img src="' + ModuleImg + '" /><div class="shape-icon"></div></div><span>' + converter.makeHtml(valor[0].v) + '</span><div class="border-header"></div></div>' +
+            '<div class="border-header"></div>' +
+            '<div class="card-header d-flex align-items-center d-flex align-items-center"><div class="module-icon"><img src="' + ModuleImg + '" /><div class="shape-icon"></div></div><span>' + converter.makeHtml(valor[0].v) + '</span></div>' +
             '<div class="card-body">' +
             '<div class="card-content row align-items-center">' +
             '<div class="col-12 col-md-6 align-items-center"><div class="text-scroll">' + converter.makeHtml(valor[1].v) + '</div></div>' +
@@ -253,7 +256,8 @@ $(document).ready(function () {
         var tipo1 = check(valor[3]),
             tipo2 = check(valor[5]);
         $("#mainTemplate").append('<div class="card template-4">' +
-            '<div class="card-header d-flex align-items-center d-flex align-items-center"><div class="module-icon"><img src="' + ModuleImg + '" /><div class="shape-icon"></div></div><span>' + converter.makeHtml(valor[0].v) + '</span><div class="border-header"></div></div>' +
+            '<div class="border-header"></div>' +
+            '<div class="card-header d-flex align-items-center d-flex align-items-center"><div class="module-icon"><img src="' + ModuleImg + '" /><div class="shape-icon"></div></div><span>' + converter.makeHtml(valor[0].v) + '</span></div>' +
             '<div class="card-body">' +
             '<div class="card-content row align-items-center">' +
             '<div class="col-12 col-md-4 align-items-center"><div class="text-scroll"><h3>' + converter.makeHtml(valor[1].v) + '</h3>' + converter.makeHtml(valor[2].v) + '</div></div>' +
@@ -291,7 +295,8 @@ $(document).ready(function () {
         var padlet = check(valor[6])
 
         $("#mainTemplate").append('<div class="card template-5">' +
-            '<div class="card-header d-flex align-items-center"><div class="module-icon"><img src="' + ModuleImg + '" /><div class="shape-icon"></div></div><span>' + converter.makeHtml(titulo) + '</span><div class="border-header"></div></div>' +
+            '<div class="border-header"></div>' +
+            '<div class="card-header d-flex align-items-center"><div class="module-icon"><img src="' + ModuleImg + '" /><div class="shape-icon"></div></div><span>' + converter.makeHtml(titulo) + '</span></div>' +
             '<div class="card-body">' +
             '<div class="card-content row">' +
 
@@ -331,7 +336,8 @@ $(document).ready(function () {
         var titulo = check(valor[0]);
         var descripcion = check(valor[1]);
         $(".container").append('<div id="descripcion-modulo" class="card template-6 zoom-anim-dialog mfp-hide">' +
-            '<div class="card-header d-flex align-items-center d-flex align-items-center"><div class="module-icon"><img src="' + ModuleImg + '" /><div class="shape-icon"></div></div><span>' + converter.makeHtml(titulo) + '</span><div class="border-header"></div></div>' +
+            '<div class="border-header"></div>' +
+            '<div class="card-header d-flex align-items-center d-flex align-items-center"><div class="module-icon"><img src="' + ModuleImg + '" /><div class="shape-icon"></div></div><span>' + converter.makeHtml(titulo) + '</span></div>' +
             '<div class="card-body">' +
             '<div class="card-content row align-items-center">' +
             '<div class="col-12 align-items-center"><div class="text-scroll">' + converter.makeHtml(descripcion) + '</div></div>' +
@@ -350,7 +356,8 @@ $(document).ready(function () {
         var titulo = check(valor[0]);
         var imagen = check(valor[1]);
         $("#mainTemplate").append('<div class="card template-7">' +
-            '<div class="card-header d-flex align-items-center d-flex align-items-center"><div class="module-icon"><img src="' + ModuleImg + '" /><div class="shape-icon"></div></div><span>' + converter.makeHtml(titulo) + '</span><div class="border-header"></div></div>' +
+            '<div class="border-header"></div>' +
+            '<div class="card-header d-flex align-items-center d-flex align-items-center"><div class="module-icon"><img src="' + ModuleImg + '" /><div class="shape-icon"></div></div><span>' + converter.makeHtml(titulo) + '</span></div>' +
             '<div class="card-body">' +
             '<div class="card-content row align-items-center">' +
             '<div class="col-12"><img src="' + imagen + '"></div>' +
@@ -391,7 +398,8 @@ $(document).ready(function () {
     function createTemplate7(array) {
         var tituloTemplate = array[0][0].v;
         $("#mainTemplate").append('<div class="card template-submodulos">' +
-            '<div class="card-header d-flex align-items-center d-flex align-items-center"><div class="module-icon"><img src="' + ModuleImg + '" /><div class="shape-icon"></div></div><span>' + tituloTemplate + '</span><div class="border-header"></div></div>' +
+            '<div class="border-header"></div>' +
+            '<div class="card-header d-flex align-items-center d-flex align-items-center"><div class="module-icon"><img src="' + ModuleImg + '" /><div class="shape-icon"></div></div><span>' + tituloTemplate + '</span></div>' +
             '<div class="card-body">' +
             '<div class="card-content row justify-content-center align-items-stretch">');
 
@@ -429,7 +437,8 @@ $(document).ready(function () {
         var titulo = check(valor[0]);
         var instrucciones = check(valor[1]);
         $("#mainTemplate").append('<div class="card template-8">' +
-            '<div class="card-header d-flex align-items-center d-flex align-items-center"><div class="module-icon"><img src="' + ModuleImg + '" /><div class="shape-icon"></div></div><span>' + converter.makeHtml(titulo) + '</span><div class="border-header"></div></div>' +
+            '<div class="border-header"></div>' +
+            '<div class="card-header d-flex align-items-center d-flex align-items-center"><div class="module-icon"><img src="' + ModuleImg + '" /><div class="shape-icon"></div></div><span>' + converter.makeHtml(titulo) + '</span></div>' +
             '<div class="card-body">' +
             '<div class="card-content row align-items-center">' +
             '<div class="col-12 col-md-6 align-items-center"><div class="text-scroll">' + converter.makeHtml(instrucciones) + '</div></div>' +
@@ -540,7 +549,9 @@ $(document).ready(function () {
 
             //Recorre todo el array de datos, evaluando que tipo de templates ,
             //se usará para cada conjunto de datos
+            debugger
             $.each(dataArray, function (k, v) {
+                titulos.push(v[0].v);
                 switch (v[v.length - 1].v) {
                     case 1:
                         createTemplate1(v);
@@ -561,8 +572,7 @@ $(document).ready(function () {
                         createTemplate6(v);
                         break;
                     case 7:
-                        if(plantilla7Array.length > 0)
-                            createTemplate7(plantilla7Array);
+                        createTemplate7(plantilla7Array);
                         break;
                     case 8:
                         createTemplate8(v);
@@ -580,7 +590,7 @@ $(document).ready(function () {
 
             $(".module-icon").css("background-color", moduleColor);
             $(".card-header span").css("color", moduleColor);
-            $(".border-header").css("border-bottom-color", moduleColor);
+            $(".border-header").css("border-top-color", moduleColor);
             $(".shape-icon").css("border-bottom-color", moduleColor);
 
             //Inicializa el slide principal que contendrá cada página
@@ -603,9 +613,18 @@ $(document).ready(function () {
                 swipe: false
             });
 
-            //Cuando se avanza en cada página, cambia el número actual
+            var maxHeight = $("#mainTemplate .slick-active .card-content").height(); 
+            $('#mainTemplate').css({height: maxHeight + 320, overflow:'visible'});
+            //Cuando se avanza en cada página, cambia el número actual y ajusta la propiedad Height
             $('#mainTemplate').on('afterChange', function (event, slick, currentSlide) {
                 $(".current_page").text(currentSlide + 1);
+
+                 // Check the class "slick-active" for which has the highest height 
+                var maxHeight = $("#mainTemplate .slick-active .card-content").height(); 
+                console.log(maxHeight)
+                // Apply the height to the slider conatiner to adapt the height
+                // .css overflow added to prevent hide arrows on change - it adds overflow hidden by default
+                $(this).css({height: maxHeight + 300, overflow:'visible'});
             });
 
             //Inicializa el scrollbar personalizado para cada contenedor de texto
@@ -654,17 +673,43 @@ $(document).ready(function () {
                 mainClass: 'my-mfp-slide-bottom'
             });
 
-            //Agrega el paginador del slider principal
+            //Agrega el footer (paginador del slider principal y menú)
             $('#mainTemplate').append("<div id='slide-nav'><div>" +
-                "<div id='goTo'>" +
-                "<div id='gotoStart'><span>Inicio</span><div class='circle2'></div></div>" +
-                "<div id='gotoEnd'><span>Fin</span><div class='circle2'></div></div>" +
-                "</div>" +
-                "<div class='pages'>" +
-                "<span class='current_page'>1</span><span> de </span><span class='total_pages'>" + total_pages + "</span>" +
-                "</div>" +
-                "</div>" +
-                "</div>");
+            "<div id='goTo'>" +
+            "<div id='gotoStart'><span>Inicio</span><div class='circle2'></div></div>" +
+            "<div id='gotoEnd'><span>Fin</span><div class='circle2'></div></div>" +
+            "</div>" +
+            "<div class='pages'>" +
+            "<span class='current_page'>1</span><span> de </span><span class='total_pages'>" + total_pages + "</span>" +
+            "</div>" +
+            "<div id='menu' data-toggle='dropdown'>" +
+            "<div class='line'></div>" +
+            "<div class='line'></div>" +
+            "<div class='line'></div>" +
+            "</div>" +
+            "<div id='menu-dropup' class='btn-group dropup'>" +
+            "</div>" +
+            "</div>" +
+            "</div>");
+
+            
+            //titulos = titulos.slice(0,2);
+            //Construye el menú de los slides
+            var items = "";
+            $.each(titulos, (k, v) => {
+                items = `${items} <a id="item${k}" class="dropdown-item">${v}</a>`;
+            });
+            $('#menu-dropup').append(`<div class='dropdown-menu'> 
+                ${items}
+                </div>`);
+
+            //Va al slide al que se da clic
+            $.each(titulos, (k, v) => {
+                $(`#item${k}`).click((e) => {
+                    e.preventDefault();
+                    $('#mainTemplate').slick('slickGoTo', k);
+                });
+            });
 
             //Va a la primera página
             $("#gotoStart").click(function () {
@@ -675,6 +720,7 @@ $(document).ready(function () {
             $("#gotoEnd").click(function () {
                 $('#mainTemplate').slick('slickGoTo', total_pages - 1);
             });
+
         }
     }
 });
