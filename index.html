@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es" manifest="etica.appcache"> 
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+        crossorigin="anonymous">
+
+    <!-- Slick core CSS -->
+    <link rel="stylesheet" type="text/css" href="css/slick.css" />
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
+
+    <!-- CustomScrollBar core CSS -->
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css" />
+
+    <!-- Magnific Popup core CSS file -->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <!-- Icon pack -->
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+
+    <!-- Estilos principales -->
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+    <!-- Contenedor de las plantillas -->
+    <div class="container">
+        <!-- DOM Render -->
+        <div id="mainTemplate" class="row align-items-center justify-content-center">
+        </div>
+    </div>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        //Link de los documentos de Google que funcionarán como base de datos
+        var linkPlantilla1 =
+        "https://docs.google.com/spreadsheets/d/14_d8L0u840Fr3wlFG9zeP-RZUOJuIfnAiQ7N4u3kpaQ/edit#gid=937683053";
+    var linkPlantilla2 =
+        "https://docs.google.com/spreadsheets/d/14_d8L0u840Fr3wlFG9zeP-RZUOJuIfnAiQ7N4u3kpaQ/edit#gid=1108074604";
+    var linkPlantilla3 =
+        "https://docs.google.com/spreadsheets/d/14_d8L0u840Fr3wlFG9zeP-RZUOJuIfnAiQ7N4u3kpaQ/edit#gid=1113284421";
+    var linkPlantilla4 =
+        "https://docs.google.com/spreadsheets/d/14_d8L0u840Fr3wlFG9zeP-RZUOJuIfnAiQ7N4u3kpaQ/edit#gid=228597821";
+    var linkPlantilla5 =
+        "https://docs.google.com/spreadsheets/d/14_d8L0u840Fr3wlFG9zeP-RZUOJuIfnAiQ7N4u3kpaQ/edit#gid=826660613";
+    var linkPlantilla6 =
+        "https://docs.google.com/spreadsheets/d/14_d8L0u840Fr3wlFG9zeP-RZUOJuIfnAiQ7N4u3kpaQ/edit#gid=951159379";			
+    var linkPlantilla7 =
+        "https://docs.google.com/spreadsheets/d/14_d8L0u840Fr3wlFG9zeP-RZUOJuIfnAiQ7N4u3kpaQ/edit#gid=426863828";
+    var linkPlantilla8 =
+        "https://docs.google.com/spreadsheets/d/14_d8L0u840Fr3wlFG9zeP-RZUOJuIfnAiQ7N4u3kpaQ/edit#gid=1578859762";			
+    var linkDescripcionModulo =
+        "https://docs.google.com/spreadsheets/d/14_d8L0u840Fr3wlFG9zeP-RZUOJuIfnAiQ7N4u3kpaQ/edit#gid=55544457";
+    var linkPlantillaMetodologias =
+        "https://docs.google.com/spreadsheets/d/14_d8L0u840Fr3wlFG9zeP-RZUOJuIfnAiQ7N4u3kpaQ/edit#gid=1985158538";
+        //Link del ícono del módulo
+        var ModuleImg = "img/icono-modulo0.png";
+
+        //Iconos estrategia
+        var analisis_literario = "img/analisis_literario.png";
+        var analisis_dilemas = "img/analisis_dilemas.png";
+        var debate = "img/debate.png";
+        var abp = "img/abp.png";
+
+        //Color del módulo
+        var moduleColor = "#75c2ff";
+    </script>
+
+    <!-- Popper core JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap core JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+        crossorigin="anonymous"></script>
+    <!-- Sheetrock library core JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.0.1/dist/sheetrock.min.js"></script>
+    <!-- Handlebars library core JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.1.2/handlebars.min.js"></script>
+    <!-- Slick library core JS -->
+    <script type="text/javascript" src="js/slick.js"></script>
+    <!-- CustomScrollBar Library core JS -->
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!-- Magnific PopUp Library core JS -->
+    <script src="js/jquery.magnific-popup.js"></script>
+    <!-- Showdown Library core JS (Markdown Library for JS) -->
+    <script src="js/showdown.js"></script>
+    <!-- Font awesome -->
+    <script src="https://use.fontawesome.com/16753b3c04.js"></script>
+    <!-- Main website JS -->
+    <script src="js/main.js" type="text/javascript"></script>
+</body>
+
+</html>
