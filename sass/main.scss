@@ -600,6 +600,10 @@ a.popup-video.video:after {
     padding: 5px;
 }
 
+span.lnr.lnr-pointer-up {
+    display: none;
+}
+
 @media (max-width: 767px) {
     .card-header {
         font-size: 24px;

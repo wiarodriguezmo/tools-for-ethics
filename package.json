@@ -1,0 +1,25 @@
+{
+  "name": "tools-for-ethics",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {},
+  "devDependencies": {
+    "uglifyjs-webpack-plugin": "^1.1.8",
+    "webpack": "^3.10.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --config webpack.config.js",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wiarodriguezmo/tools-for-ethics.git"
+  },
+  "author": "William",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wiarodriguezmo/tools-for-ethics/issues"
+  },
+  "homepage": "https://github.com/wiarodriguezmo/tools-for-ethics#readme"
+}

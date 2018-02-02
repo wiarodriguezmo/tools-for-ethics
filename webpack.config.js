@@ -1,8 +1,16 @@
-//  webpack.config.js 
+
+const path = require('path');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+
 module.exports = {
-    entry: './js/main.js',
-    output: {
-        filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist')
-    }
+  entry: './src/js/main.js',
+  output: {
+    filename: 'main.js',
+    path: path.resolve(__dirname, 'js')
+  },
+  plugins: [
+    new UglifyJsPlugin({
+        test: /\.js($|\?)/i
+      })
+  ]
 };
