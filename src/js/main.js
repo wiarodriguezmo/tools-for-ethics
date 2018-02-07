@@ -262,11 +262,11 @@ $(document).ready(function () {
             '<div class="card-body">' +
             '<div class="card-content row align-items-center">' +
             '<div class="col-12 col-md-4 align-items-center"><div class="text-scroll"><h3>' + converter.makeHtml(valor[1].v) + '</h3>' + converter.makeHtml(valor[2].v) + '</div></div>' +
-            '<div class="row col-12 col-md-4 align-items-center justify-content-center">' +
+            '<div class="row col-12 col-md-5 align-items-center justify-content-center">' +
             putVideo2(video1, tipo1) +
             putVideo2(video2, tipo2) +
             '</div>' +
-            '<div class="col-md-4 justify-content-center"><h3></h3>' +
+            '<div class="col-md-3 justify-content-center"><h3></h3>' +
             '<div class="notas">' +
             putNote(nota1) +
             putNote(nota2) +
@@ -715,7 +715,10 @@ $(document).ready(function () {
             $( "#mCSB_26_scrollbar_vertical" ).click(function( event ) {
                 return false;
             });
-                
+            $( ".mCSB_scrollTools" ).click(function( event ) {
+                return false;
+            });
+            
             //Va al slide al que se da clic
             $.each(titulos, (k, v) => {
                 $(`#item${k}`).click((e) => {

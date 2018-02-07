@@ -28,6 +28,7 @@
 </head>
 
 <body>
+    <div class="loader"></div>
     <!-- Contenedor de las plantillas -->
     <div class="container">
         <!-- DOM Render -->
@@ -35,9 +36,11 @@
         </div>
     </div>
 
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>-->
+        
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"></script>
     <script type="text/javascript">
         //Link de los documentos de Google que funcionarán como base de datos
         var linkPlantilla1 =
@@ -96,6 +99,17 @@
     <script src="https://use.fontawesome.com/16753b3c04.js"></script>
     <!-- Main website JS -->
     <script src="js/main.js" type="text/javascript"></script>
+    
+    <script>
+        // $(window).load(function(){
+            // });
+        $(window).on("load", function(){
+            $.ready.then(function(){
+                $('.loader').fadeOut();
+            // Both ready and loaded
+            });
+        })
+    </script>
 </body>
 
 </html>
